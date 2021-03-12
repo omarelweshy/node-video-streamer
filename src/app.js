@@ -1,4 +1,5 @@
 const path = require("path")
+const fs = require("fs")
 const express = require("express")
 const hbs = require("hbs")
 
@@ -19,9 +20,9 @@ hbs.registerPartials(partialsPath)
 // Setting static DIR to serve
 app.use(express.static(publicDirPath))
 
-app.get("/", (req, res) => {
-  res.render("index.hbs")
-})
+// Video Router
+app.use("/video", require("../routes/video"))
+app.use("/", require("../routes/index"))
 
 // Setting up Server
 app.listen(port, () => {

@@ -5,7 +5,7 @@ const router = express.Router()
 
 router.get("/", (req, res, next) => {
   // Define source of Video
-  const path = "public/video.mp4"
+  const path = "public/toystory.mp4"
 
   fs.stat(path, (err, stats) => {
     // Declare the range of the part of video which goes to bytes
